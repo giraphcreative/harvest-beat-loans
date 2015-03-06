@@ -6,4 +6,4 @@
 	url = https://github.com/aFarkas/html5shiv.git
 [submodule "js/lib/accrue"]
 	path = js/lib/accrue
-	url = git@github.com:jpederson/Accrue.js.git
+	url = https://github.com/jpederson/Accrue.js.git
