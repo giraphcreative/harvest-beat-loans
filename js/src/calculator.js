@@ -2,6 +2,10 @@
 
 $(function(){
 
+	$(".rate").keyup(function(){
+		$(".rate_compare").val( $(this).val()-1 );
+	});
+
 	$(".calculator").accrue({
 		mode: "compare",
 		response_output_div: ".result-amount",
