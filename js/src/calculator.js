@@ -3,7 +3,8 @@
 $(function(){
 
 	$(".rate").keyup(function(){
-		$(".rate_compare").val( $(this).val()-1 );
+		var new_rate = parseFloat( $(this).val()-1 );
+		$(".rate_compare").val( ( new_rate < 1.75 ? 1.75 : new_rate ) );
 	});
 
 	$(".calculator").accrue({
