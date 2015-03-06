@@ -10,7 +10,7 @@
 
 	.sixty {
 		width: 58%;
-		margin-right: 4%;
+		margin: 0 2%;
 	}
 
 	.fourty {
@@ -23,7 +23,7 @@
 
 	.three-quarter {
 		width: 73%;
-		margin-right: 4%;
+		margin: 0 2%;
 	}
 
 	.third {
@@ -33,11 +33,7 @@
 
 	.half {
 		width: 47%;
-		margin-right: 3%;
-
-		&.right {
-			margin: 0 0 0 3%;
-		}
+		margin: 0 1.5%;
 	}
 }
 

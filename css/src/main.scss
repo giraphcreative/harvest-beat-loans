@@ -4,8 +4,8 @@
 $yellow: #F3C25B;
 $teal: #83BAB2;
 $green: #8B9E74;
-$red: #B30838;
-$grey: #6D6E71;
+$red: #831528;
+$grey: #414042;
 
 
 @import "reset";
@@ -27,8 +27,6 @@ $grey: #6D6E71;
 
 	@include respond-to( 1220px ) {
 		padding-bottom: 20px;
-		margin: 30px 0;
-		box-shadow: 0 0 25px rgba( black, 0.3 );
 	}
 }
 
@@ -36,32 +34,13 @@ $grey: #6D6E71;
 // header styles
 header {
 	position: relative;
+	background: url(../img/bg-header.jpg) center center no-repeat;
+	background-size: cover;
+	text-align: right;
 	
-	a {
-		opacity: .7;
-		transition: opacity 400ms ease-in-out;
-
-		&:hover {
-			opacity: 1;
-		}
+	.wrap {
+		max-width: 900px;
 	}
-
-	.logo {
-		position: absolute;
-		top: 4px;
-		right: 4px;
-		max-width: 30%;
-
-		@include respond-to( 800px ) {
-			top: 30px;
-			right: 30px;
-		}
-	}
-
-	@include respond-to( 800px ) {
-		margin-top: -40px;
-	}
-
 }
 
 
@@ -88,21 +67,21 @@ header {
 // tool styles
 .tool {
 	padding: 0;
+	text-align: center;
 	
 	@include respond-to( 768px ) {
 		padding: 20px 40px;
 	}
 
 	.calculator {
-		background-color: $teal;
+		background: url(../img/bg-box.png);
 		color: white;
-		text-align: center;
 		padding: 20px 15px 30px;
 		margin-top: 30px;
 		@include font-title;
 
 		button, input[type=submit], .btn {
-			width: 75%;
+			width: 100%;
 			margin: 0 auto;
 		}
 		
@@ -118,86 +97,13 @@ header {
 	}
 
 	.half.right.first {
-		padding: 20px;
-			
-		@include respond-to( 768px ) {
-			padding: 50px 0;
-		}
+		padding: 30px 10px;
 
-		.item {
-			padding: 5px 10px 5px 70px;
-			position: relative;
-
-			@include respond-to( 1024px ) {
-				padding: 10px 10px 10px 80px;
-			}
-
-			.arrow {
-				position: absolute;
-				left: 5px;
-				top: 5px;
-				width: 50px;
-				height: 50px;
-				border-radius: 10px;
-
-				@include respond-to( 1024px ) {
-					width: 60px;
-					height: 60px;
-				}
-				
-				&:before {
-					content: "";
-					position: absolute;
-					top: 5px;
-					left: 5px;
-					width: 40px;
-					height: 40px;
-					background: url(../img/arrow.png);
-
-					@include respond-to( 1024px ) {
-						top: 10px;
-						left: 10px;
-					}
-				}
-
-				&.yellow { 
-					background-color: $yellow;
-				}
-
-				&.green { 
-					background-color: $green;
-					&:before { transform: rotate( 180deg ); }
-				}
-
-				&.teal { 
-					background-color: $teal;
-					&:before { transform: rotate( 90deg ); }
-				}
-
-				&.red { 
-					background-color: $red;
-					&:before { transform: rotate( -90deg ); }
-				}
-			}
-
-			h4 {
-				@include font-title;
-				text-transform: uppercase;
-				padding: 0;
-				font-size: 1.5em;
-
-				@include respond-to( 768px ) {
-					font-size: 1.7em;
-				}
-			}
-
-			p {
-				padding: 5px 0;
-			}
+		@include respond-to( 1024px ) {
+			padding: 30px;
 		}
 	}
 }
-
 
 
 
@@ -209,7 +115,7 @@ header {
 
 	// large title
 	h2 {
-		@include font-title;
+		@include font;
 		color: $red;
 		font-size: 1.8em;
 
@@ -220,61 +126,39 @@ header {
 	}
 
 	h3 {
-		@include font-title;
+		@include font;
 		font-size: 1.5em;
 
 		@include respond-to( 768px ) {
 			font-size: 2em;
+			padding: 10px 20px;
 		}
 	}
 
 	p {
-		@include font-title-light;
-	}
+		@include font-title;
+		font-size: 1.5em;
+		line-height: 1.5em;
 
-	// big ole apply button
-	a.apply {
-		padding: 30px 15px;
-		font-size: 30px;
-		line-height: 35px;
-		margin: 20px 0;
-
-		span {
-			display: block;
-			font-weight: bold;
-			font-size: 40px;
-			line-height: 45px;
-		}
-
-		@include respond-to( 768px ) { 
-			padding: 50px 20px;
-			width: 50%;
-			margin: 40px 25% 15px;
-			font-size: 35px;
-			line-height: 40px;
-
-			span {
-				font-size: 45px;
-				line-height: 50px;
-			}
+		@include respond-to( 768px ) {
+			font-size: 2em;
+			padding: 50px 20px 10px;
 		}
 	}
 }
 
 
 
-
-
 // footer styles
 .footer-bar {
-	background: $grey url(../img/bg-footer-bar.png) center center no-repeat;
-	color: white;
+	border-top: 10px solid $grey;
+	color: $grey;
 	padding: 30px 20px;
 	text-align: center;
 
 	h2, h4 {
 		&, a {
-			color: white;
+			color: $red;
 		}
 
 		@include font-title;
@@ -306,13 +190,16 @@ header {
 }
 
 
+
 .fine-print {
-	padding: 20px;
+	padding: 20px 0 0;
 	font-size: .85em;
 	line-height: 1.3em;
+	text-align: left;
 
 	img {
 		float: right;
 		margin: 0 0 15px 15px;
 	}
 }
+
