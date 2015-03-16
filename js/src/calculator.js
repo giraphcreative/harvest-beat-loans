@@ -3,7 +3,7 @@
 $(function(){
 
 	$(".rate").keyup(function(){
-		var new_rate = parseFloat( $(this).val()-1 );
+		var new_rate = parseFloat( $(this).val().replace(/[^\d.]/ig, '') ) - 0.5;
 		$(".rate_compare").val( ( new_rate < 1.75 ? 1.75 : new_rate ) );
 	});
 
